@@ -135,6 +135,3 @@ Sync status is tracked per row (`PENDING` / `SYNCED`) so the app knows what to p
 - Recommendations are rule-based, not ML. They look at your actual spending patterns and flag actionable stuff.
 - Dark mode is supported via the settings screen.
 
-## License
-
-_TODO: add license_

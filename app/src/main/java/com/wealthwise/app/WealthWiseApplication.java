@@ -8,6 +8,7 @@ import androidx.work.NetworkType;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
+import com.google.android.material.color.DynamicColors;
 import com.wealthwise.app.data.local.AppDatabase;
 import com.wealthwise.app.util.CurrencyFormatter;
 import com.wealthwise.app.util.NotificationHelper;
@@ -24,6 +25,7 @@ public class WealthWiseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        DynamicColors.applyToActivitiesIfAvailable(this);
         database = AppDatabase.getInstance(this);
         CurrencyFormatter.init(this);
         NotificationHelper.createNotificationChannels(this);
