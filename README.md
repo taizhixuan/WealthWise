@@ -15,7 +15,7 @@ I built this because I wanted something straightforward that works offline but c
 - **Cloud sync** — optional Firebase sync so your data stays consistent across devices
 - **Offline first** — everything works locally with Room. Firebase sync runs in the background when you have internet
 
-## Screenshots
+## Screen Screenshots
 
 <p align="center">
   <img src="screenshots/dashboard.png" alt="Dashboard" width="270" />
@@ -26,7 +26,7 @@ I built this because I wanted something straightforward that works offline but c
 </p>
 <p align="center">
   <img src="screenshots/more.png" alt="Settings" width="270" />
-</p>
+</p> 
 
 ## Tech stack
 
