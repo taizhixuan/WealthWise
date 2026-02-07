@@ -17,7 +17,7 @@
         android:id="@+id/tv_category_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
         android:layout_weight="1"
         android:textAppearance="?attr/textAppearanceBodyMedium"
         tools:text="Food &amp; Dining" />
@@ -34,7 +34,7 @@
         android:id="@+id/tv_percentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
         android:textAppearance="?attr/textAppearanceLabelSmall"
         android:textColor="?attr/colorOnSurfaceVariant"
         tools:text="32%" />

@@ -17,14 +17,14 @@
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/bar_chart"
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="@dimen/chart_height" />
 
         <!-- Summary Text -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_md"
-            app:cardCornerRadius="12dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="1dp">
 
             <LinearLayout
@@ -39,7 +39,7 @@
                     android:text="Monthly Summary"
                     android:textAppearance="?attr/textAppearanceTitleSmall"
                     android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="@dimen/spacing_sm" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,7 +64,7 @@
                             android:id="@+id/tv_avg_income"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="@dimen/spacing_xxs"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/green_income"
                             android:textStyle="bold"
@@ -88,7 +88,7 @@
                             android:id="@+id/tv_avg_expense"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="@dimen/spacing_xxs"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/red_expense"
                             android:textStyle="bold"

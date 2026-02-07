@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingHorizontal="20dp"
-    android:paddingBottom="24dp">
+    android:paddingBottom="@dimen/spacing_lg">
 
     <!-- Drag Handle -->
     <View
@@ -14,14 +14,14 @@
         android:layout_height="4dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/spacing_md"
         android:background="@drawable/drag_handle_background" />
 
     <!-- Title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/spacing_md"
         android:text="@string/filter_transactions"
         android:textAppearance="?attr/textAppearanceTitleLarge" />
 
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/date_range"
         android:textAppearance="?attr/textAppearanceLabelLarge"
         android:textColor="?attr/colorPrimary" />
@@ -44,7 +44,7 @@
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:layout_weight="1"
             android:hint="From"
             app:endIconDrawable="@drawable/ic_calendar"
@@ -65,7 +65,7 @@
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/spacing_sm"
             android:layout_weight="1"
             android:hint="To"
             app:endIconDrawable="@drawable/ic_calendar"
@@ -87,8 +87,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/category"
         android:textAppearance="?attr/textAppearanceLabelLarge"
         android:textColor="?attr/colorPrimary" />
@@ -107,8 +107,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/transaction_type"
         android:textAppearance="?attr/textAppearanceLabelLarge"
         android:textColor="?attr/colorPrimary" />
@@ -148,8 +148,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/amount"
         android:textAppearance="?attr/textAppearanceLabelLarge"
         android:textColor="?attr/colorPrimary" />
@@ -164,7 +164,7 @@
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:layout_weight="1"
             android:hint="Min"
             app:prefixText="$">
@@ -182,7 +182,7 @@
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/spacing_sm"
             android:layout_weight="1"
             android:hint="Max"
             app:prefixText="$">
@@ -201,7 +201,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
         android:gravity="end"
         android:orientation="horizontal">
 
@@ -210,7 +210,7 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:layout_weight="1"
             android:text="@string/reset" />
 
@@ -218,7 +218,7 @@
             android:id="@+id/btn_apply"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/spacing_sm"
             android:layout_weight="1"
             android:text="@string/apply_filter" />
 
