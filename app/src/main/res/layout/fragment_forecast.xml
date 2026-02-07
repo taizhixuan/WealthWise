@@ -16,10 +16,10 @@
         <!-- Projected Balance Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_projected_balance"
+            style="@style/Widget.WealthWise.CardView.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="@dimen/card_elevation">
+            app:cardBackgroundColor="?attr/colorPrimaryContainer">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/projected_balance"
                     android:textAppearance="?attr/textAppearanceLabelLarge"
-                    android:textColor="?attr/colorOnSurfaceVariant" />
+                    android:textColor="?attr/colorOnPrimaryContainer" />
 
                 <TextView
                     android:id="@+id/tv_projected_amount"
@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_sm"
                     android:textAppearance="?attr/textAppearanceHeadlineLarge"
-                    android:textColor="?attr/colorPrimary"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     android:textStyle="bold"
                     tools:text="$12,450.00" />
 
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_xs"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     tools:text="in 30 days" />
 
             </LinearLayout>
@@ -96,11 +96,10 @@
         <!-- Forecast Chart Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_forecast_chart"
+            style="@style/Widget.WealthWise.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_md"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="@dimen/card_elevation">
+            android:layout_marginTop="@dimen/spacing_md">
 
             <LinearLayout
                 android:layout_width="match_parent"

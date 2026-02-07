@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WealthWise" parent="Theme.Material3.DynamicColors.Dark.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="materialCardViewStyle">@style/Widget.WealthWise.CardView</item>
+        <item name="materialButtonStyle">@style/Widget.WealthWise.Button</item>
+    </style>
+</resources>

@@ -8,41 +8,45 @@
     android:fillViewport="true"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="@dimen/spacing_md">
 
+        <!-- Loading Indicator (overlay) -->
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/progress_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:indeterminate="true"
-            android:visibility="visible" />
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Balance Card -->
+        <!-- ==================== HERO: Total Balance ==================== -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_balance"
-            android:layout_width="match_parent"
+            style="@style/Widget.WealthWise.CardView.Large"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/card_corner_radius"
-            app:cardElevation="@dimen/card_elevation"
             app:cardBackgroundColor="?attr/colorPrimaryContainer"
-            android:layout_marginBottom="@dimen/spacing_md">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/spacing_md">
+                android:padding="@dimen/spacing_lg">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/total_balance"
-                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
                     android:textColor="?attr/colorOnPrimaryContainer" />
 
                 <TextView
@@ -50,219 +54,328 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_xs"
-                    android:textAppearance="?attr/textAppearanceHeadlineLarge"
+                    android:textAppearance="@style/TextAppearance.WealthWise.Balance"
                     android:textColor="?attr/colorOnPrimaryContainer"
                     android:textStyle="bold"
                     tools:text="$12,450.00" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_md"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <!-- Income Total -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/income"
-                            android:textAppearance="?attr/textAppearanceLabelSmall"
-                            android:textColor="?attr/colorOnPrimaryContainer" />
-
-                        <TextView
-                            android:id="@+id/tv_monthly_income"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/spacing_xxs"
-                            android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textColor="@color/income_color"
-                            android:textStyle="bold"
-                            tools:text="$5,200.00" />
-                    </LinearLayout>
-
-                    <!-- Expense Total -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="end">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/expenses"
-                            android:textAppearance="?attr/textAppearanceLabelSmall"
-                            android:textColor="?attr/colorOnPrimaryContainer" />
-
-                        <TextView
-                            android:id="@+id/tv_monthly_expense"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/spacing_xxs"
-                            android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textColor="@color/expense_color"
-                            android:textStyle="bold"
-                            tools:text="$3,150.00" />
-                    </LinearLayout>
-                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Quick Action Buttons -->
+        <!-- ==================== Income Tile (left half) ==================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_income"
+            style="@style/Widget.WealthWise.CardView.Filled"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bento_tile_height"
+            android:layout_marginTop="@dimen/bento_gap"
+            android:layout_marginEnd="6dp"
+            app:cardBackgroundColor="?attr/colorSecondaryContainer"
+            app:layout_constraintEnd_toStartOf="@id/card_expense"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_balance">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size_medium"
+                    android:layout_height="@dimen/icon_size_medium"
+                    android:contentDescription="@string/income"
+                    android:src="@drawable/ic_arrow_up"
+                    app:tint="?attr/colorOnSecondaryContainer" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/income"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                <TextView
+                    android:id="@+id/tv_monthly_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xxs"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@color/income_color"
+                    android:textStyle="bold"
+                    tools:text="$5,200.00" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ==================== Expense Tile (right half) ==================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_expense"
+            style="@style/Widget.WealthWise.CardView.Filled"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bento_tile_height"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="@dimen/bento_gap"
+            app:cardBackgroundColor="?attr/colorTertiaryContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_income"
+            app:layout_constraintTop_toBottomOf="@id/card_balance">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size_medium"
+                    android:layout_height="@dimen/icon_size_medium"
+                    android:contentDescription="@string/expenses"
+                    android:src="@drawable/ic_arrow_down"
+                    app:tint="?attr/colorOnTertiaryContainer" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/expenses"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="?attr/colorOnTertiaryContainer" />
+
+                <TextView
+                    android:id="@+id/tv_monthly_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xxs"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@color/expense_color"
+                    android:textStyle="bold"
+                    tools:text="$3,150.00" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ==================== Quick Actions Row ==================== -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/layout_quick_actions"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/spacing_md"
             android:gravity="center"
-            android:layout_marginBottom="@dimen/spacing_md">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_add_income"
-                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="@dimen/spacing_xs"
-                app:icon="@drawable/ic_arrow_up"
-                android:contentDescription="@string/add_income_description"
-                tools:ignore="ContentDescription" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_add_expense"
-                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="@dimen/spacing_xs"
-                app:icon="@drawable/ic_arrow_down"
-                android:contentDescription="@string/add_expense_description"
-                tools:ignore="ContentDescription" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_budget"
-                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="@dimen/spacing_xs"
-                app:icon="@drawable/ic_receipt"
-                android:contentDescription="@string/budget_description"
-                tools:ignore="ContentDescription" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_reports"
-                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="@dimen/spacing_xs"
-                app:icon="@drawable/ic_analytics"
-                android:contentDescription="@string/reports_description"
-                tools:ignore="ContentDescription" />
-        </LinearLayout>
-
-        <!-- Budget Progress Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="@dimen/spacing_sm">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_income">
 
-            <TextView
+            <!-- Income -->
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/budget_progress"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textStyle="bold" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_view_all_budgets"
-                android:layout_width="wrap_content"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_income"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/add_income_description"
+                    app:icon="@drawable/ic_arrow_up" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/income"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- Expense -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/view_all"
-                android:textAppearance="?attr/textAppearanceLabelLarge"
-                android:textColor="?attr/colorPrimary"
-                android:background="?attr/selectableItemBackground"
-                android:padding="@dimen/spacing_xs" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_expense"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/add_expense_description"
+                    app:icon="@drawable/ic_arrow_down" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/expense"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- Budget -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_budget"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/budget_description"
+                    app:icon="@drawable/ic_receipt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/budget_progress"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- Reports -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_reports"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/reports_description"
+                    app:icon="@drawable/ic_analytics" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/nav_analytics"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
         </LinearLayout>
+
+        <!-- ==================== Budget Progress Section ==================== -->
+        <TextView
+            android:id="@+id/tv_budget_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/budget_progress"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_all_budgets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_quick_actions" />
+
+        <TextView
+            android:id="@+id/tv_view_all_budgets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/spacing_xs"
+            android:text="@string/view_all"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_budget_header"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_budget_progress"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_md"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:clipToPadding="false"
             android:orientation="horizontal"
-            tools:listitem="@layout/item_budget_progress"
-            tools:itemCount="3" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_budget_header"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_budget_progress" />
 
-        <!-- Recent Transactions Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- ==================== Recent Transactions Section ==================== -->
+        <TextView
+            android:id="@+id/tv_transactions_header"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="@dimen/spacing_sm">
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/recent_transactions"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_all_transactions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_budget_progress" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/recent_transactions"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_view_all_transactions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/view_all"
-                android:textAppearance="?attr/textAppearanceLabelLarge"
-                android:textColor="?attr/colorPrimary"
-                android:background="?attr/selectableItemBackground"
-                android:padding="@dimen/spacing_xs" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_view_all_transactions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/spacing_xs"
+            android:text="@string/view_all"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_transactions_header"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- No Transactions text -->
         <TextView
             android:id="@+id/tv_no_transactions"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/spacing_lg"
             android:text="@string/no_transactions"
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:gravity="center"
-            android:padding="@dimen/spacing_lg"
             android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_transactions_header"
             tools:visibility="visible" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_recent_transactions"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:nestedScrollingEnabled="false"
-            android:layout_marginBottom="@dimen/spacing_md"
-            tools:listitem="@layout/item_transaction"
-            tools:itemCount="5" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_transactions_header"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_transaction" />
 
-        <!-- Mini Spending Chart -->
+        <!-- ==================== Spending Chart Card ==================== -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_spending_chart"
-            android:layout_width="match_parent"
+            style="@style/Widget.WealthWise.CardView.Filled"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/card_corner_radius"
-            app:cardElevation="@dimen/card_elevation"
-            android:layout_marginBottom="@dimen/spacing_md">
+            android:layout_marginTop="@dimen/spacing_md"
+            android:layout_marginBottom="@dimen/spacing_md"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_recent_transactions">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -273,10 +386,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_sm"
                     android:text="@string/spending_overview"
                     android:textAppearance="?attr/textAppearanceTitleSmall"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="@dimen/spacing_sm" />
+                    android:textStyle="bold" />
 
                 <FrameLayout
                     android:id="@+id/chart_container"
@@ -285,5 +398,5 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

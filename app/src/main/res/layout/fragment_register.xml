@@ -14,7 +14,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:padding="@dimen/spacing_md"
-        android:paddingTop="@dimen/spacing_xxl">
+        android:paddingTop="64dp">
 
         <!-- App Logo -->
         <ImageView
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_xs"
-            android:layout_marginBottom="@dimen/spacing_xl"
+            android:layout_marginBottom="@dimen/spacing_xxl"
             android:text="Start managing your finances today"
             android:textAppearance="?attr/textAppearanceBodyLarge"
             android:textColor="?attr/colorOnSurfaceVariant" />
@@ -47,16 +47,12 @@
         <!-- Email -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_email"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.WealthWise.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
             android:hint="@string/email"
-            app:startIconDrawable="@drawable/ic_email"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:startIconDrawable="@drawable/ic_email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
@@ -69,17 +65,13 @@
         <!-- Password -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_password"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.WealthWise.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
             android:hint="@string/password"
             app:startIconDrawable="@drawable/ic_lock"
-            app:endIconMode="password_toggle"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
@@ -92,17 +84,13 @@
         <!-- Confirm Password -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_confirm_password"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.WealthWise.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_lg"
             android:hint="@string/confirm_password"
             app:startIconDrawable="@drawable/ic_lock"
-            app:endIconMode="password_toggle"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_confirm_password"
@@ -120,7 +108,7 @@
             android:layout_height="wrap_content"
             android:text="@string/create_account"
             android:textAllCaps="false"
-            app:cornerRadius="12dp" />
+            app:cornerRadius="@dimen/card_corner_radius" />
 
         <!-- Spacer -->
         <View

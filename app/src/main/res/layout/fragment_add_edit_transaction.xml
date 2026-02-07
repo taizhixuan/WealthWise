@@ -52,16 +52,12 @@
         <!-- Amount -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_amount"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.WealthWise.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
             android:hint="@string/amount"
-            app:prefixText="$"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:prefixText="$">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_amount"
@@ -78,11 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
-            android:hint="@string/category"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            android:hint="@string/category">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/actv_category"
@@ -98,11 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
-            android:hint="@string/account"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            android:hint="@string/account">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/actv_account"
@@ -114,16 +102,12 @@
         <!-- Date -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_date"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.WealthWise.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
             android:hint="@string/date"
-            app:startIconDrawable="@drawable/ic_calendar"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:startIconDrawable="@drawable/ic_calendar">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_date"
@@ -139,15 +123,11 @@
         <!-- Payee -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_payee"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.WealthWise.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
-            android:hint="@string/payee"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            android:hint="@string/payee">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_payee"
@@ -160,15 +140,11 @@
         <!-- Note -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_note"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.WealthWise.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_md"
-            android:hint="@string/note"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            android:hint="@string/note">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_note"
@@ -230,11 +206,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_md"
-                        android:hint="@string/interval"
-                        app:boxCornerRadiusBottomEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusTopStart="12dp">
+                        android:hint="@string/interval">
 
                         <com.google.android.material.textfield.MaterialAutoCompleteTextView
                             android:id="@+id/actv_interval"
@@ -246,16 +218,12 @@
                     <!-- End Date -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/til_end_date"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        style="@style/Widget.WealthWise.TextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_md"
                         android:hint="@string/end_date_label"
-                        app:startIconDrawable="@drawable/ic_calendar"
-                        app:boxCornerRadiusBottomEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusTopStart="12dp">
+                        app:startIconDrawable="@drawable/ic_calendar">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_end_date"
@@ -280,7 +248,7 @@
             android:layout_marginBottom="@dimen/spacing_md"
             android:text="@string/save"
             android:textAllCaps="false"
-            app:cornerRadius="12dp" />
+            app:cornerRadius="@dimen/card_corner_radius" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

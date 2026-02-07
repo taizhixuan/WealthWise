@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_marginVertical="@dimen/spacing_xs"
     app:cardCornerRadius="@dimen/card_corner_radius"
-    app:cardElevation="1dp">
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="?attr/colorSurfaceContainerLow">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
             android:src="@drawable/ic_category"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@android:color/white"
+            app:tint="?attr/colorOnPrimary"
             tools:background="@drawable/circle_background" />
 
         <!-- Category Name -->
@@ -51,7 +52,7 @@
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/spacing_xs"
             android:textAppearance="?attr/textAppearanceLabelMedium"
-            android:textColor="@android:color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

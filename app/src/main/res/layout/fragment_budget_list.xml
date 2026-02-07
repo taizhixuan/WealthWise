@@ -124,6 +124,6 @@
         android:layout_margin="@dimen/spacing_md"
         android:contentDescription="@string/add_budget"
         android:src="@drawable/ic_add"
-        app:tint="@android:color/white" />
+        app:tint="?attr/colorOnPrimary" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

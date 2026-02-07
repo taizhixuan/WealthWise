@@ -24,7 +24,7 @@
         android:contentDescription="@string/add_transaction"
         android:src="@drawable/ic_add_circle"
         app:tint="?attr/colorOnPrimary"
-        app:backgroundTint="@color/primary"
+        app:backgroundTint="?attr/colorPrimary"
         app:fabSize="normal"
         app:elevation="6dp" />
 
@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?attr/colorSurface"
+        app:elevation="0dp"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu" />
 

@@ -21,6 +21,11 @@ I built this because I wanted something straightforward that works offline but c
   <img src="screenshots/dashboard.png" alt="Dashboard" width="270" />
   &nbsp;&nbsp;
   <img src="screenshots/analytics.png" alt="Analytics" width="270" />
+  &nbsp;&nbsp;
+  <img src="screenshots/transactions.png" alt="Add Transaction" width="270" />
+</p>
+<p align="center">
+  <img src="screenshots/more.png" alt="Settings" width="270" />
 </p>
 
 ## Tech stack

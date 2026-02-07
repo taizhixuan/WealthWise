@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_marginEnd="12dp"
     app:cardCornerRadius="@dimen/card_corner_radius"
-    app:cardElevation="@dimen/card_elevation">
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="?attr/colorSurfaceContainerLow">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +29,7 @@
                 android:contentDescription="Category icon"
                 android:padding="@dimen/spacing_xs"
                 android:src="@drawable/ic_category"
-                app:tint="@android:color/white"
+                app:tint="?attr/colorOnPrimary"
                 tools:background="@drawable/circle_background" />
 
             <TextView
