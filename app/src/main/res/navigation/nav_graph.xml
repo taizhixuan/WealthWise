@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <!-- Dashboard -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.wealthwise.app.ui.dashboard.DashboardFragment"
+        android:label="@string/dashboard_title"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action_dashboard_to_addEditTransaction"
+            app:destination="@id/addEditTransactionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_dashboard_to_transactionList"
+            app:destination="@id/transactionListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_dashboard_to_budgetList"
+            app:destination="@id/budgetListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_dashboard_to_analytics"
+            app:destination="@id/analyticsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Transaction List -->
+    <fragment
+        android:id="@+id/transactionListFragment"
+        android:name="com.wealthwise.app.ui.transaction.TransactionListFragment"
+        android:label="@string/transaction_title"
+        tools:layout="@layout/fragment_transaction_list">
+
+        <action
+            android:id="@+id/action_transactionList_to_addEditTransaction"
+            app:destination="@id/addEditTransactionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_transactionList_to_filterBottomSheet"
+            app:destination="@id/transactionFilterBottomSheet"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Add / Edit Transaction -->
+    <fragment
+        android:id="@+id/addEditTransactionFragment"
+        android:name="com.wealthwise.app.ui.transaction.AddEditTransactionFragment"
+        android:label="@string/add_transaction"
+        tools:layout="@layout/fragment_add_edit_transaction">
+
+        <argument
+            android:name="transactionId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Transaction Filter Bottom Sheet -->
+    <dialog
+        android:id="@+id/transactionFilterBottomSheet"
+        android:name="com.wealthwise.app.ui.transaction.TransactionFilterBottomSheet"
+        android:label="@string/filter"
+        tools:layout="@layout/bottom_sheet_transaction_filter" />
+
+    <!-- Analytics -->
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="com.wealthwise.app.ui.analytics.AnalyticsFragment"
+        android:label="@string/analytics_title"
+        tools:layout="@layout/fragment_analytics" />
+
+    <!-- Budget List -->
+    <fragment
+        android:id="@+id/budgetListFragment"
+        android:name="com.wealthwise.app.ui.budget.BudgetListFragment"
+        android:label="@string/budget_title"
+        tools:layout="@layout/fragment_budget_list">
+
+        <action
+            android:id="@+id/action_budgetList_to_addEditBudget"
+            app:destination="@id/addEditBudgetFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Add / Edit Budget -->
+    <fragment
+        android:id="@+id/addEditBudgetFragment"
+        android:name="com.wealthwise.app.ui.budget.AddEditBudgetFragment"
+        android:label="@string/add_budget"
+        tools:layout="@layout/fragment_add_edit_budget">
+
+        <argument
+            android:name="budgetId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Category List -->
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.wealthwise.app.ui.category.CategoryListFragment"
+        android:label="@string/categories_title"
+        tools:layout="@layout/fragment_category_list">
+
+        <action
+            android:id="@+id/action_categoryList_to_addEditCategory"
+            app:destination="@id/addEditCategoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Add / Edit Category -->
+    <fragment
+        android:id="@+id/addEditCategoryFragment"
+        android:name="com.wealthwise.app.ui.category.AddEditCategoryFragment"
+        android:label="@string/add_category"
+        tools:layout="@layout/fragment_add_edit_category">
+
+        <argument
+            android:name="categoryId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Forecast -->
+    <fragment
+        android:id="@+id/forecastFragment"
+        android:name="com.wealthwise.app.ui.forecast.ForecastFragment"
+        android:label="@string/forecast_title"
+        tools:layout="@layout/fragment_forecast" />
+
+    <!-- Recommendations -->
+    <fragment
+        android:id="@+id/recommendationFragment"
+        android:name="com.wealthwise.app.ui.recommendation.RecommendationFragment"
+        android:label="@string/recommendations_title"
+        tools:layout="@layout/fragment_recommendation">
+
+        <action
+            android:id="@+id/action_recommendation_to_budgetList"
+            app:destination="@id/budgetListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_recommendation_to_analytics"
+            app:destination="@id/analyticsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_recommendation_to_transactionList"
+            app:destination="@id/transactionListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Recurring List -->
+    <fragment
+        android:id="@+id/recurringListFragment"
+        android:name="com.wealthwise.app.ui.recurring.RecurringListFragment"
+        android:label="@string/recurring_title"
+        tools:layout="@layout/fragment_recurring_list">
+
+        <action
+            android:id="@+id/action_recurringList_to_addEditRecurring"
+            app:destination="@id/addEditRecurringFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Add / Edit Recurring -->
+    <fragment
+        android:id="@+id/addEditRecurringFragment"
+        android:name="com.wealthwise.app.ui.recurring.AddEditRecurringFragment"
+        android:label="@string/add_recurring"
+        tools:layout="@layout/fragment_add_edit_recurring">
+
+        <argument
+            android:name="recurringId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Settings -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.wealthwise.app.ui.settings.SettingsFragment"
+        android:label="@string/settings_title"
+        tools:layout="@layout/fragment_settings" />
+
+    <!-- Login -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.wealthwise.app.ui.auth.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_login_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Register -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.wealthwise.app.ui.auth.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_register_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

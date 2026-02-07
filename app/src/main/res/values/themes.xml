@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WealthWise" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+        <item name="colorTertiary">@color/tertiary</item>
+        <item name="colorTertiaryContainer">@color/tertiary_container</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorErrorContainer">@color/error_container</item>
+        <item name="colorOnError">@color/on_error</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnBackground">@color/on_background</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/outline_variant</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Card Style -->
+        <item name="materialCardViewStyle">@style/Widget.WealthWise.CardView</item>
+
+        <!-- Button style -->
+        <item name="materialButtonStyle">@style/Widget.WealthWise.Button</item>
+    </style>
+
+    <style name="Theme.WealthWise.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primary</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.WealthWise</item>
+    </style>
+
+    <!-- Card Style -->
+    <style name="Widget.WealthWise.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+    </style>
+
+    <!-- Button Style -->
+    <style name="Widget.WealthWise.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="Widget.WealthWise.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="Widget.WealthWise.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <!-- Text Input -->
+    <style name="Widget.WealthWise.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/card_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/card_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/card_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/card_corner_radius</item>
+    </style>
+
+    <!-- Chip -->
+    <style name="Widget.WealthWise.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipCornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <!-- Bottom Sheet -->
+    <style name="Widget.WealthWise.BottomSheet" parent="Widget.Material3.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.WealthWise.BottomSheet</item>
+    </style>
+
+    <style name="ShapeAppearance.WealthWise.BottomSheet" parent="">
+        <item name="cornerSizeTopLeft">@dimen/bottom_sheet_corner_radius</item>
+        <item name="cornerSizeTopRight">@dimen/bottom_sheet_corner_radius</item>
+    </style>
+
+    <!-- Amount Text Styles -->
+    <style name="TextAppearance.WealthWise.Balance" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textSize">@dimen/text_headline_large</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.WealthWise.Amount.Income" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/income_color</item>
+    </style>
+
+    <style name="TextAppearance.WealthWise.Amount.Expense" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/expense_color</item>
+    </style>
+</resources>

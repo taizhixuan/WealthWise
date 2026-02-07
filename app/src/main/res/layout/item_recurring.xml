@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <!-- Category Icon -->
+        <ImageView
+            android:id="@+id/iv_category_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Category icon"
+            android:padding="8dp"
+            android:src="@drawable/ic_category"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/white"
+            tools:background="@drawable/circle_background" />
+
+        <!-- Title (Payee or Category Name) -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            app:layout_constraintStart_toEndOf="@id/iv_category_icon"
+            app:layout_constraintTop_toTopOf="@id/iv_category_icon"
+            tools:text="Netflix" />
+
+        <!-- Interval Text -->
+        <TextView
+            android:id="@+id/tv_interval"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            app:layout_constraintStart_toEndOf="@id/iv_category_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="Monthly" />
+
+        <!-- Next Occurrence -->
+        <TextView
+            android:id="@+id/tv_next_occurrence"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toStartOf="@id/chip_status"
+            app:layout_constraintStart_toEndOf="@id/iv_category_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_interval"
+            tools:text="Next: Feb 15, 2024" />
+
+        <!-- Amount -->
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="-$15.99"
+            tools:textColor="#D32F2F" />
+
+        <!-- Active/Inactive Chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:chipMinHeight="24dp"
+            app:chipMinTouchTargetSize="0dp"
+            app:ensureMinTouchTargetSize="false"
+            app:textStartPadding="6dp"
+            app:textEndPadding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount"
+            tools:text="Active" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
