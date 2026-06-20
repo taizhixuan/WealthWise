@@ -28,51 +28,6 @@ I built this because I wanted something straightforward that works offline but c
   <img src="screenshots/more.png" alt="Settings" width="270" />
 </p> 
 
-## Tech stack
-
-| Layer | What's used |
-|-------|-------------|
-| Language | Java 17 |
-| Architecture | MVVM (ViewModel + LiveData) |
-| Local DB | Room (SQLite) |
-| Cloud | Firebase Auth + Firestore |
-| Auth | Email/password, Google Sign-In |
-| Charts | MPAndroidChart |
-| Background | WorkManager |
-| Navigation | Jetpack Navigation Component |
-| UI | Material Design 3, ViewBinding |
-| Min SDK | 26 (Android 8.0) |
-| Target SDK | 34 |
-
-## Project structure
-
-```
-com.wealthwise.app/
-├── data/
-│   ├── local/          # Room database, DAOs, entities, migrations
-│   ├── model/          # Domain models and enums
-│   ├── remote/         # Firebase Firestore, sync manager, DTOs
-│   └── repository/     # Repository layer (single source of truth)
-├── engine/
-│   ├── forecast/       # Forecasting engine (moving avg, regression, weighted avg)
-│   ├── recommendation/ # Spending analysis, rule-based advisor, trend detection
-│   └── recurring/      # Recurring transaction processor
-├── ui/
-│   ├── auth/           # Login, register
-│   ├── dashboard/      # Home screen with balance, recent transactions, budgets
-│   ├── transaction/    # Transaction list, add/edit, filters
-│   ├── budget/         # Budget list, add/edit
-│   ├── category/       # Category management, icon picker
-│   ├── recurring/      # Recurring transaction list, add/edit
-│   ├── analytics/      # Pie, bar, and line chart fragments
-│   ├── forecast/       # Forecast results screen
-│   ├── recommendation/ # Recommendations screen
-│   ├── settings/       # App settings (theme, sync, etc.)
-│   └── common/         # Shared UI components (dialogs, helpers)
-├── util/               # Formatting, date helpers, notifications, preferences
-└── worker/             # WorkManager jobs (sync, recurring, budget alerts)
-```
-
 ## How to build and run
 
 **Requirements:**
@@ -133,10 +88,4 @@ Five main tables:
 
 Sync status is tracked per row (`PENDING` / `SYNCED`) so the app knows what to push to Firebase.
 
-## Notes
-
-- The app works fully offline. Firebase is optional — if you skip the `google-services.json` setup, local storage still works fine.
-- Forecasting uses an ensemble of three methods and includes confidence intervals.
-- Recommendations are rule-based, not ML. They look at your actual spending patterns and flag actionable stuff.
-- Dark mode is supported via the settings screen.
 
