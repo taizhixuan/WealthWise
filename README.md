@@ -2,8 +2,6 @@
 
 A personal finance app for Android. Track your income and expenses, set budgets, see where your money goes, and get recommendations on how to spend smarter.
 
-I built this because I wanted something straightforward that works offline but can still sync across devices when I need it to.
-
 ## What it does
 
 - **Track transactions** — log income and expenses with categories, notes, and payees
